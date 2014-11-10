@@ -1,9 +1,16 @@
-elpa/*
-custom/*
-themes/*
-auto-save-list/
-semanticdb/*
-eshell/*
+/elpa/*
+/custom/*
+/themes/*
+/auto-save-list/*
+/semanticdb/*
+/eshell/*
+
+# Keep the directories
+!/elpa/.keep
+!/custom/.keep
+!/themes/.keep
+!/semanticdb/.keep
+
 *.elc
-**/.*elc
+**/*.elc
 .org-id-locations
