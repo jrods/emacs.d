@@ -4,12 +4,16 @@
 /auto-save-list/*
 /semanticdb/*
 /eshell/*
+/emms/*
 
 # Keep the directories
 !/elpa/.keep
 !/custom/.keep
 !/themes/.keep
 !/semanticdb/.keep
+
+# Testing, keeping my theme
+!/themes/Glacial-Dark-theme.el
 
 *.elc
 **/*.elc

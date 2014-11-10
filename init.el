@@ -15,8 +15,6 @@
 (setq make-backup-files nil)
 (color-theme-approximate-on)
 (autopair-global-mode)
-(require 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
 (hl-line-mode)
 ;; Rust stuff
 (require 'rust-mode)
@@ -32,7 +30,9 @@
  ;; If there is more than one, they won't work right.
  '(buffers-menu-show-directories t)
  '(custom-enabled-themes (quote (Glacial-Dark)))
- '(custom-safe-themes (quote ("57feb5d1050c015a620b7ffd05bf09e21903c2cbffdf357e21db14c721ecbd39" default)))
+ '(custom-safe-themes
+   (quote
+    ("7dc68389ff027b898cd4ed7b2c42018e4d4d8e34a6036c1c2ba94c18f6bfcfc3" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(custom-theme-load-path (quote (custom-theme-directory t)))
  '(display-battery-mode t)
@@ -41,7 +41,11 @@
  '(linum-format "%5d")
  '(max-mini-window-height 2)
  '(minibuffer-auto-raise nil)
- '(mode-line-format (quote ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position (vc-mode vc-mode) "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)))
+ '(mode-line-format
+   (quote
+    ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+     (vc-mode vc-mode)
+     "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)))
  '(org-export-backends (quote (ascii html icalendar latex md odt)) t)
  '(org-startup-truncated nil)
  '(scroll-bar-mode nil)
@@ -71,7 +75,7 @@
 
 ;; --------------------------------------------------
 ;
-; OSX Specific
+;; OSX Specific
 ;
 ;; --------------------------------------------------
 (if (eq system-type 'darwin)
@@ -98,30 +102,28 @@
 	(defun track-mouse (e))
 	(setq mouse-sel-mode t))
       ))
-; End OSX
-;; --------------------------------------------------
+;; End OSX
 
 ;; --------------------------------------------------
 ;
-; Linux Specific
+;; Linux Specific
 ;
 ;; --------------------------------------------------
-
 (if (eq system-type 'linux)
     (progn
 
       ))
-; End Linux
-;; --------------------------------------------------
+;; End Linux
 
 ;; --------------------------------------------------
 ;
-; Windows Specific
+;; Windows Specific
 ;
 ;; --------------------------------------------------
 (if (eq system-type 'windows-nt)
     (progn
 
       ))
-; End Windows
-;; --------------------------------------------------
+;; End Windows
+
+;;; init.el ends here
