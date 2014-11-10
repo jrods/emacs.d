@@ -1,0 +1,9 @@
+elpa/*
+custom/*
+themes/*
+auto-save-list/
+semanticdb/*
+eshell/*
+*.elc
+**/.*elc
+.org-id-locations
