@@ -111,7 +111,7 @@
 ;; --------------------------------------------------
 (if (eq system-type 'linux)
     (progn
-
+      (message "success")
       ))
 ;; End Linux
 
@@ -122,7 +122,7 @@
 ;; --------------------------------------------------
 (if (eq system-type 'windows-nt)
     (progn
-
+      (message "success")
       ))
 ;; End Windows
 
