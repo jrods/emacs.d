@@ -14,8 +14,12 @@
 ; No tilde backups
 (setq make-backup-files nil)
 (color-theme-approximate-on)
-(autopair-global-mode)
 (hl-line-mode)
+
+;; omnisharp
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-omnisharp))
+
 ;; Rust stuff
 (require 'rust-mode)
 (require 'racer)
@@ -46,6 +50,7 @@
     ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
      (vc-mode vc-mode)
      "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)))
+ '(omnisharp-host "http://localhost:5004/")
  '(org-export-backends (quote (ascii html icalendar latex md odt)) t)
  '(org-startup-truncated nil)
  '(scroll-bar-mode nil)
@@ -111,7 +116,7 @@
 ;; --------------------------------------------------
 (if (eq system-type 'linux)
     (progn
-      (message "success")
+      (message "success linux")
       ))
 ;; End Linux
 
@@ -122,7 +127,7 @@
 ;; --------------------------------------------------
 (if (eq system-type 'windows-nt)
     (progn
-      (message "success")
+      (message "success windows")
       ))
 ;; End Windows
 
