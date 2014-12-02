@@ -15,11 +15,12 @@
 (setq make-backup-files nil)
 (color-theme-approximate-on)
 (hl-line-mode)
-
-;; omnisharp
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-omnisharp))
-
+;; Why no rainbow-delimiter-global-mode ?
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'org-mode-hook #'rainbow-delimiters-mode)
+;; Same with paredit, why no global mode?
+(add-hook 'prog-mode-hook #'enable-paredit-mode)
+(add-hook 'org-mode-hook #'enable-paredit-mode)
 ;; Rust stuff
 (require 'rust-mode)
 (require 'racer)
