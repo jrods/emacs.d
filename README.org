@@ -1,10 +1,10 @@
 #+Title: Emacs Directory
 #+Author: Jared Smith
 
-* Emacs Directory
-
 My emacs settings directory
 
+* No init.elc
 Compile init.el separately; init.elc is excluded from repo
 
-All packages are not included with repo, to save space i guess, will have to figure out a way to dump a list of install packages and create a checksum and redownload missing packages
+* No Packages
+All packages are not included with repo, to save space i guess, will have to figure out a way to dump a list of install packages and create a checksum and redownload missing packages.
