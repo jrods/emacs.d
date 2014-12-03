@@ -20,7 +20,6 @@
 (add-hook 'org-mode-hook #'rainbow-delimiters-mode)
 ;; Same with paredit, why no global mode?
 (add-hook 'prog-mode-hook #'enable-paredit-mode)
-(add-hook 'org-mode-hook #'enable-paredit-mode)
 ;; Rust stuff
 (require 'rust-mode)
 (require 'racer)

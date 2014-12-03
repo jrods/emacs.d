@@ -1,3 +1,6 @@
+#+Title: Emacs Directory
+#+Author: Jared Smith
+
 * Emacs Directory
 
 My emacs settings directory
