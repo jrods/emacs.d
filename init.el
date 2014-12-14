@@ -18,8 +18,8 @@
 ;; Why no rainbow-delimiter-global-mode ?
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'org-mode-hook #'rainbow-delimiters-mode)
-;; Same with paredit, why no global mode?
-(add-hook 'prog-mode-hook #'enable-paredit-mode)
+;; Paredit sucks
+(autopair-global-mode t)
 ;; Rust stuff
 (require 'rust-mode)
 (require 'racer)
