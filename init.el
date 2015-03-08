@@ -10,7 +10,6 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.org/packages/")))
 (package-initialize)
-(setq paradox-github-token "ec2165afa7f52a05acf456a8912b2b6962c66be9")
 ; No tilde backups
 (setq make-backup-files nil)
 (color-theme-approximate-on)
