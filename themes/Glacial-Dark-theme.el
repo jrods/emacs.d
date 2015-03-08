@@ -87,7 +87,7 @@
      ((,class (:background "maroon1"))))
    
    `(fringe
-     ((t (:background ,Glacial-background-below))))
+     ((t (:background ,Glacial-background))))
    
    `(highlight
      ((t (:background "gray25"))))
