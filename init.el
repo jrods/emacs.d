@@ -14,7 +14,6 @@
 ; No tilde backups
 (setq make-backup-files nil)
 (color-theme-approximate-on)
-(hl-line-mode)
 ;; Why no rainbow-delimiter-global-mode ?
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'org-mode-hook #'rainbow-delimiters-mode)
@@ -32,17 +31,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(buffers-menu-show-directories t)
  '(custom-enabled-themes (quote (Glacial-Dark)))
  '(custom-safe-themes
    (quote
-    ("7dc68389ff027b898cd4ed7b2c42018e4d4d8e34a6036c1c2ba94c18f6bfcfc3" default)))
+    ("4e262566c3d57706c70e403d440146a5440de056dfaeb3062f004da1711d83fc" "058eeda70c6a8e702da4c7037c582f727887f5ab49a401247eac40aece97060d" "7dc68389ff027b898cd4ed7b2c42018e4d4d8e34a6036c1c2ba94c18f6bfcfc3" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(custom-theme-load-path (quote (custom-theme-directory t)))
  '(display-battery-mode t)
- '(global-linum-mode t)
+ '(global-nlinum-mode t)
  '(inhibit-startup-screen t)
- '(linum-format "%5d")
  '(max-mini-window-height 2)
  '(minibuffer-auto-raise nil)
  '(mode-line-format
@@ -51,9 +51,10 @@
      (vc-mode vc-mode)
      "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)))
  '(omnisharp-host "http://localhost:5004/")
- '(org-export-backends (quote (ascii html icalendar latex md odt)) t)
+ '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(org-startup-truncated nil)
  '(scroll-bar-mode nil)
+ '(size-indication-mode t)
  '(tool-bar-mode nil))
 
 (custom-set-faces
@@ -85,6 +86,12 @@
 ;; --------------------------------------------------
 (if (eq system-type 'darwin)
     (progn
+
+      ;; fixes 'too long for unix domain', could be a problem on other platforms
+      ;; confirmed problem on osx
+      (put 'temporary-file-directory 'standard-value '((file-name-as-directory "/tmp")))
+      
+      (setq ring-bell-function 'ignore)
       
       (setq ispell-program-name "/usr/local/bin/aspell")
       
