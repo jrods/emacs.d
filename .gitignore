@@ -20,3 +20,4 @@
 .org-id-locations
 
 tramp
+elpa-backup.el
