@@ -8,7 +8,7 @@
 
 (custom-theme-set-variables
  'Glacial-Dark
- `(minibuffer-auto-raise nil)
+ `(minibuffer-auto-raise t)
  `(max-mini-window-height 2))
 
 (let ((class '((class color) (min-colors 89)))

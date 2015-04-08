@@ -18,8 +18,6 @@
 (add-hook 'org-mode-hook  #'rainbow-delimiters-mode)
 ;; Paredit sucks
 (autopair-global-mode t)
-; Org-mode
-;; LaTeX export options
 
 ; Rice
 (custom-set-variables
@@ -27,19 +25,24 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(ansi-color-names-vector
+   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(buffers-menu-show-directories t)
  '(custom-enabled-themes (quote (Glacial-Dark)))
- '(custom-safe-themes (quote ("43a1307e24e1622534de4317cfa912e22acf92da55e44646563bdea0059dff49" default)))
+ '(custom-safe-themes
+   (quote
+    ("b6581b238a258e91ee152c47f73744f3c12be6880097a352daf0a72f659deffb" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(custom-theme-load-path (quote (custom-theme-directory t)))
  '(display-battery-mode t)
- '(fringe-mode nil nil (fringe))
+ '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(global-nlinum-mode t)
  '(inhibit-startup-screen t)
- '(max-mini-window-height 2)
- '(minibuffer-auto-raise nil)
- '(mode-line-format (quote ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position (vc-mode vc-mode) "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)))
+ '(mode-line-format
+   (quote
+    ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+     (vc-mode vc-mode)
+     "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)))
  '(omnisharp-host "http://localhost:5004/")
  '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(org-startup-truncated nil)

@@ -18,3 +18,5 @@
 *.elc
 **/*.elc
 .org-id-locations
+
+tramp
