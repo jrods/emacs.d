@@ -34,20 +34,20 @@
    'Glacial-Dark
    
    `(info-title-1
-     ((t (:family "Source Sans Pro" :foreground ,gray-Glacial-1 :inherit outline-1))))
+     ((t (:inherit outline-1 :foreground ,gray-Glacial-1 :family "Fira Sans"))))
    `(info-title-2 
-     ((t (:inherit outline-2 :foreground ,gray-Glacial-2 :family "Source Sans Pro"))))
+     ((t (:inherit outline-2 :foreground ,gray-Glacial-2 :family "Fira Sans"))))
    `(info-title-3 
-     ((t (:inherit outline-3 :foreground ,gray-Glacial-3 :family "Source Sans Pro"))))
+     ((t (:inherit outline-3 :foreground ,gray-Glacial-3 :family "Fira Sans"))))
    `(info-title-4 
-     ((t (:inherit outline-4 :foreground ,gray-Glacial-4 :family "Source Sans Pro"))))
+     ((t (:inherit outline-4 :foreground ,gray-Glacial-4 :family "Fira Sans"))))
    
    `(info-header-node
      ((t (:foreground "lawn green"))))
    `(info-header-xref 
      ((t (:foreground "khaki1"))))
    `(info-menu-header 
-     ((t (:family "helv" :weight bold))))
+     ((t (:weight bold))))
    `(info-node 
      ((t (:foreground "medium spring green"))))
    `(info-xref 
@@ -61,15 +61,21 @@
    `(font-lock-comment-face 
      ((t (:foreground "gray50" :slant italic))))
    `(font-lock-constant-face 
-     ((t (:foreground "DarkOliveGreen4"))))
+     ((t (:foreground "DarkOliveGreen4" :slant italic))))
    `(font-lock-doc-face 
      ((t (:foreground "peru"))))
    `(font-lock-function-name-face 
      ((t (:foreground "goldenrod1"))))
    `(font-lock-keyword-face 
      ((t (:foreground "pale green"))))
+   `(font-lock-negation-char-face
+     ((t (:foreground "tan"))))
+   `(font-lock-operator-face
+     ((t (:foreground "purple1"))))
    `(font-lock-preprocessor-face 
      ((t (:foreground "gold3"))))
+   `(font-lock-pseudo-keyword-face
+     ((t (:foreground "deep sky blue"))))
    `(font-lock-regexp-grouping-backslash 
      ((t (:weight bold))))
    `(font-lock-regexp-grouping-construct 
@@ -77,9 +83,9 @@
    `(font-lock-string-face 
      ((t (:foreground "chartreuse3"))))
    `(font-lock-type-face 
-     ((t (:foreground "pink1"))))
+     ((t (:foreground "pink1" :weight bold))))
    `(font-lock-variable-name-face 
-     ((t (:foreground "SeaGreen4"))))
+     ((t (:foreground "SeaGreen3"))))
    `(font-lock-warning-face 
      ((t (:foreground "salmon1"))))
    
@@ -164,7 +170,7 @@
      ((t (:foreground ,Glacial-8))))
    
    `(org-level-1
-     ((t (:height 250 :weight bold :inherit outline-1))))
+     ((t (:inherit outline-1 :weight bold :height 250))))
    `(org-level-2
      ((t (:inherit outline-2 :weight semi-bold :height 230))))
    `(org-level-3
@@ -174,7 +180,7 @@
    `(org-level-5
      ((t (:inherit outline-5 :weight normal :height 190))))
    `(org-level-6 
-     ((t (:height 170 :inherit outline-6))))
+     ((t (:inherit outline-6 :height 170))))
    `(org-level-7 
      ((t (:inherit outline-7 :height 150))))
    `(org-level-8
@@ -202,7 +208,7 @@
      ((t (:foreground "yellow" :background ,error-background))))
    
    `(default
-      ((t (:background ,Glacial-background :foreground "white smoke" :family "Source Code Pro"))))
+      ((t (:background ,Glacial-background :foreground "white smoke" :family "Fira Mono"))))
    ))
 
 (provide-theme 'Glacial-Dark)

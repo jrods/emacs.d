@@ -1,8 +1,13 @@
 ;;; New version of my init.el
 ;;; Author: Jared Smith
-; Load Path for .el files
+
+;; Load Path for .el files
 (add-to-list 'load-path "~/.emacs.d/custom/")
-; MELPA Package settings
+
+;; make all themes safe
+(setq custom-safe-themes t)
+
+;; MELPA Package settings
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
@@ -10,16 +15,20 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.org/packages/")))
 (package-initialize)
-; No tilde backups
+
+;; No tilde backups
 (setq make-backup-files nil)
+
 (color-theme-approximate-on)
+
 ;; Why no rainbow-delimiter-global-mode ?
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'org-mode-hook  #'rainbow-delimiters-mode)
-;; Paredit sucks
+
 (autopair-global-mode t)
 
-; Rice
+(setq magit-aut-revert-mode nil)
+
+;; Rice
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,9 +38,6 @@
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(buffers-menu-show-directories t)
  '(custom-enabled-themes (quote (Glacial-Dark)))
- '(custom-safe-themes
-   (quote
-    ("b6581b238a258e91ee152c47f73744f3c12be6880097a352daf0a72f659deffb" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(custom-theme-load-path (quote (custom-theme-directory t)))
  '(display-battery-mode t)
@@ -71,6 +77,41 @@
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(95 90))))
 (global-set-key (kbd "C-c t") 'toggle-transparency)
+
+;; 
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; --------------------------------------------------
+;
+;; web-mode being set as defaults
+;
+;; --------------------------------------------------
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 4)
+
+  (setq web-mode-code-indent-offset 4)
+
+  (setq web-mode-css-indent-offset 4)
+  (setq web-mode-enable-css-colorization t)
+  (set-face-attribute 'web-mode-css-at-rule-face nil :foreground "Lawn Green")
+  (set-face-attribute 'web-mode-css-function-face nil :foreground "goldenrod1")
+  (set-face-attribute 'web-mode-css-pseudo-class-face nil :foreground "pink1")
+  (set-face-attribute 'web-mode-css-property-name-face nil :foreground "DarkOrange3")
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+;; End web-mode
 
 ;; --------------------------------------------------
 ;
@@ -125,8 +166,14 @@
 
       (set-face-attribute 'default nil :height 100)
 
-      (setq visible-bell 0)
+      (setq visible-bell nil)
 
+      ;; Rust
+      ;(setq racer-rust-src-path "/usr/local/src/rustc-1.0.0/src/")
+      ;(setq racer-cmd "/home/jared/apps/racer/target/release/racer")
+      ;(add-to-list 'load-path "/home/jared/apps/racer/editors/emacs")
+      ;(eval-after-load "rust-mode" '(require 'racer))
+      
       ))
 ;; End Linux
 

@@ -5,6 +5,7 @@
 /semanticdb/*
 /eshell/*
 /emms/*
+/project-explorer-cache/*
 
 # Keep the directories
 !/elpa/.keep
