@@ -1,12 +1,6 @@
 ;;; New version of my init.el
 ;;; Author: Jared Smith
 
-;; Load Path for .el files
-(add-to-list 'load-path "~/.emacs.d/custom/")
-
-;; make all themes safe
-(setq custom-safe-themes t)
-
 ;; MELPA Package settings
 (require 'package)
 (add-to-list 'package-archives
@@ -15,6 +9,12 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.org/packages/")))
 (package-initialize)
+
+;; Load Path for .el files
+(add-to-list 'load-path "~/.emacs.d/custom/")
+
+;; make all themes safe
+(setq custom-safe-themes t)
 
 ;; No tilde backups
 (setq make-backup-files nil)
@@ -78,6 +78,8 @@
     (set-frame-parameter nil 'alpha '(95 90))))
 (global-set-key (kbd "C-c t") 'toggle-transparency)
 
+
+(global-set-key (kbd "C-c p") 'project-explorer-toggle)
 ;; 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
@@ -137,8 +139,8 @@
       (osx-clipboard-mode +1)
 
       ;; Rust stuff
-      (require 'rust-mode)
-      (require 'racer)
+      ;(require 'rust-mode)
+      ;(require 'racer)
       
       ;; enable mouse reporting for terminal emulators
       (unless window-system

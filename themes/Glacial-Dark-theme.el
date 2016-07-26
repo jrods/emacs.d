@@ -26,9 +26,9 @@
       (gray-Glacial-3 "gray85")
       (gray-Glacial-4 "gray70")
       (error-background "sienna1")
-      (Glacial-background "gray7")
-      (Glacial-background-above "gray16")
-      (Glacial-background-below "black"))
+      (Glacial-background "gray16")
+      (Glacial-background-above "gray24")
+      (Glacial-background-below "gray8"))
   
   (custom-theme-set-faces
    'Glacial-Dark
